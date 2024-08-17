@@ -1,0 +1,149 @@
+.Bienvenida{
+    grid-template-columns: 100vw;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "Bienvenido Bienvenido"
+      "texto texto"
+      "Email Email"
+      "inputEmail inputEmail"
+      "Password Password"
+      "inputPassword inputPassword"
+      "Forgotten Forgotten"
+      "LogIn LogIn";
+    max-width: 30vw;
+    min-width: 400px;
+}
+
+#tarjeta{
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.title {
+    grid-area: Bienvenido;
+    display: grid;
+    width: calc(100% + 40px);
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+#createAccount{
+    font-size: 18px;
+}
+
+.subtitle {
+    grid-area: texto;
+    display: grid;
+    font-size: 0.725rem;
+    width: calc(100% + 40px);
+    text-align: center;
+    text-align: center;
+    line-height: 1.1rem;
+    color: #8B8E98
+}  
+
+#Register{
+    color: #ff77ef;
+    width: calc(100% + 40px);
+    text-align: center;
+    cursor: pointer;
+}
+
+.label-email {
+    grid-area: Password;
+    display: grid;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 30px;
+    font-weight: 600;
+    text-align: left;
+}
+
+#inputEmail {
+    grid-area: inputEmail;
+    display: grid;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 40px;
+    border-radius: 100px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.label-password {
+    grid-area: Password;
+    display: grid;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: left;
+}
+
+#inputPassword {
+    grid-area: inputPassword;
+    display: grid;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    padding: 0 0 0 40px;
+    border-radius: 100px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+#Forgotten{
+    grid-area: Forgotten;
+    display: grid;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #ff77ef;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#LogIn {
+    grid-area: LogIn;
+    display: grid;
+    width: calc(100% + 41px);
+    height: 42px;
+    border-color: #ff77ef;
+    background: #ff77ef;
+    border-radius: 100px;
+    font-size: 16px;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 0px #720d51)
+    drop-shadow(0px 1px 0.5px rgba(60, 3, 52, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.success{
+    color: greenyellow;
+    margin-top: 10px;
+    width: calc(100% + 40px);
+    font-style: italic;
+    font-weight: normal;
+    text-align: right;
+}
+
+.error{
+    color: rgb(255, 59, 59);
+    margin-top: 10px;
+    width: calc(100% + 40px);
+    font-style: italic;
+    font-weight: normal;
+    text-align: right;
+}

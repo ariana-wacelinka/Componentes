@@ -1,0 +1,203 @@
+.grid {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'titulo titulo'
+    'nuevaTarea agregar';
+  gap: 10px;
+  align-content: center;
+  padding-right: 20px;
+  max-width: 30vw;
+  min-width: 400px;
+}
+
+.lista {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+h1 {
+  grid-area: titulo;
+  display: grid;
+  text-align: left;
+  font-size: 40px;
+  min-width: 400px;
+  max-width: 30vw;
+  margin: 0;
+}
+
+input {
+  grid-area: nuevaTarea;
+  display: grid;
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 30px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+          drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.agregar {
+  grid-area: agregar;
+  display: block;
+  width: calc(100% + 15px);
+  height: 42px;
+  margin-left: 40px;
+  border: none;
+  background: #070707;
+  border-radius: 100px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  filter: drop-shadow(0px 1px 0px #720d51)
+          drop-shadow(0px 1px 0.5px rgba(60, 3, 52, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.agregar:hover {
+  background: #ff79d9;
+}
+
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  align-items: start;
+}
+
+li {
+  display: grid;
+  grid-template-areas: 'check tarea eliminar';
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+}
+
+.contenedor-checkbox {
+  grid-area: check;
+  display: flex;
+  align-items: center;
+}
+
+.input-checkbox {
+  display: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox span:first-child {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-right: 10px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.checkbox span:first-child svg {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.input-checkbox:checked + .checkbox span:first-child {
+  background: #ff78db;
+}
+
+.input-checkbox:checked + .checkbox span:first-child svg {
+  stroke-dashoffset: 0;
+}
+
+.tarea {
+  grid-area: tarea;
+  display: flex;
+  padding: 0 0 0 10px;
+}
+
+.completada {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.eliminar {
+  grid-area: eliminar;
+  display: grid;
+  width: 80px;
+  height: 30px;
+  border: none;
+  background: #ff77ef;
+  border-radius: 100px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  filter: drop-shadow(0px 1px 0px #720d51)
+          drop-shadow(0px 1px 0.5px rgba(60, 3, 52, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.eliminar:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'titulo'
+      'nuevaTarea'
+      'agregar';
+    max-width: 100%;
+    padding-right: 10px;
+    border: black 1px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .agregar {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  li {
+    grid-template-areas:
+      'check tarea'
+      'eliminar eliminar';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+  }
+
+  .eliminar {
+    width: 100%;
+  }
+}

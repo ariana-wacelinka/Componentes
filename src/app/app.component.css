@@ -1,0 +1,38 @@
+app-login {
+    grid-area: login;
+    display: grid;
+    margin-top: 10px;
+    padding: 10px;
+    padding-right: 40px;
+    min-width: 100px;
+    justify-content: space-around;
+}
+
+app-todo-list {
+    grid-area: todo;
+    display: grid;
+    padding: 10px;
+    margin-top: 10px;
+    min-width: 150px;
+    justify-content: space-around;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        'login todo';
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            'login'
+            'todo';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+}

@@ -1,0 +1,43 @@
+<div id="tarjeta">
+    <div class="Bienvenida">
+        <form>
+            <div class="title">¡Bienvenido de nuevo!</div>
+            <span id="createAccount" class="subtitle">¿No tienes una cuenta?</span>
+            <a id="Register" class="subtitle"><u>Regístrate</u></a>
+            <span id="Email">
+            <label for="Email" class="label-email">Correo Electrónico</label>
+            <input id="inputEmail"
+                type="email"
+                name="email"
+                class="form-control"
+                required
+                minlength="4"
+                placeholder="Dirección de Email electrónico"
+                [(ngModel)]="email"
+                pInputText>
+            </span>
+
+            <span id="Password">
+                <label for="Password" class="label-password">Contraseña</label>
+                <input type="password"
+                id="inputPassword"
+                name="password"
+                class="form-control"
+                required
+                minlength="8"
+                maxlength="16"
+                placeholder="Contraseña"
+                [(ngModel)]="password"
+                pInputText>
+            </span>
+
+            <span id="Forgotten">
+                <a class="Forgotten"><u>¿Olvidaste tu Contraseña?</u></a>
+            </span>
+
+            <button type="button" (click)="sendLogIn()" id="LogIn">Iniciar sesión</button>
+        </form>
+        <div class="success" *ngIf="successMessage">¡Inicio de sesión exitoso!</div>
+        <div class="error" *ngIf="errorMessage">Error al ingresar email y/o contraseña</div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="lista">
+  <section class="grid">
+    <h1>LISTA DE TAREAS</h1>
+    <input [(ngModel)]="nuevaTarea" placeholder="Nueva tarea" />
+    <button class="agregar" (click)="agregarTarea()">AGREGAR</button>
+  </section>
+  <ul>
+    <li *ngFor="let tarea of tareas">
+      <div class="contenedor-checkbox">
+        <input type="checkbox" id="{{'cbx-' + tarea.id}}" class="input-checkbox" [(ngModel)]="tarea.completada" />
+        <label for="{{'cbx-' + tarea.id}}" class="checkbox">
+          <span>
+            <svg >
+              <polyline points="1 5 4 8 11 1"></polyline> <!-- Esto es para el css -->
+            </svg>
+          </span>
+          <span class="tarea" [ngClass]="{'completada': tarea.completada}">{{tarea.nombre}}</span>
+        </label>
+      </div>
+      <button class="eliminar" (click)="eliminarTarea(tarea.id)">ELIMINAR</button>
+    </li>
+  </ul>
+</div>
